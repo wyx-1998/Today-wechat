@@ -1,0 +1,3 @@
+# Isolated synthetic AES/CLI checks; not desktop bundle dependencies.
+pycryptodome==3.23.0
+PyYAML==6.0.3

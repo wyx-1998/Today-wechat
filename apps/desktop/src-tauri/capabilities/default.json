@@ -1,0 +1,4 @@
+{
+  "identifier": "main", "description": "Only the local application window.",
+  "windows": ["main"], "permissions": ["core:default"]
+}

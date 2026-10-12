@@ -1,0 +1,51 @@
+# 本机配置、密钥和微信数据
+config.yaml
+all_keys.json
+decrypted/
+collector.db
+collector.db-shm
+collector.db-wal
+
+# 本机环境和运行产物
+.venv/
+__pycache__/
+*.py[cod]
+scripts/decrypt/find_all_keys_macos
+.venv-build/
+.venv-refresh-check/
+.toolchains/
+.build/
+apps/desktop/node_modules/
+apps/desktop/dist/
+apps/desktop/src-tauri/target/
+apps/desktop/src-tauri/gen/
+apps/desktop/src-tauri/binaries/reader-*
+application.sqlite3*
+demo-source-v1/
+
+# Private working material and media; retain them locally
+output/
+.playwright-cli/
+design/
+docs/*
+!docs/ARCHITECTURE.md
+.DS_Store
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+*.log
+.venv-*/
+
+# Process-memory key extractor excluded from the public distribution
+scripts/decrypt/find_all_keys_macos*

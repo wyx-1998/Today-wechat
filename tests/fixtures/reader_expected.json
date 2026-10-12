@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "cases": {
+    "selected_chat": {
+      "read_labels": [
+        "selected_a"
+      ],
+      "stored_labels": [
+        "selected_a"
+      ],
+      "cursors": {
+        "fixture_project@chatroom": "1"
+      },
+      "failed_chats": {},
+      "outcome": "success"
+    },
+    "empty_selection": {
+      "read_labels": [],
+      "stored_labels": [],
+      "cursors": {},
+      "failed_chats": {},
+      "outcome": "no_selection"
+    },
+    "seven_day_boundary": {
+      "read_labels": [
+        "start",
+        "inside",
+        "last"
+      ],
+      "stored_labels": [
+        "start",
+        "inside",
+        "last"
+      ],
+      "cursors": {
+        "fixture_project@chatroom": "4"
+      },
+      "failed_chats": {},
+      "outcome": "success"
+    },
+    "long_text": {
+      "read_labels": [
+        "long"
+      ],
+      "stored_labels": [
+        "long"
+      ],
+      "cursors": {
+        "fixture_project@chatroom": "1"
+      },
+      "failed_chats": {},
+      "outcome": "success",
+      "content_lengths": {
+        "long": 2800
+      }
+    },
+    "sender_identity": {
+      "read_labels": [
+        "self",
+        "peer"
+      ],
+      "stored_labels": [
+        "self",
+        "peer"
+      ],
+      "cursors": {
+        "fixture_project@chatroom": "2"
+      },
+      "failed_chats": {},
+      "outcome": "success",
+      "identities": {
+        "self": {
+          "sender_id": "fixture_self",
+          "is_self": true
+        },
+        "peer": {
+          "sender_id": "fixture_peer_a",
+          "is_self": false
+        }
+      }
+    },
+    "same_display_name": {
+      "read_labels": [
+        "alias_a",
+        "alias_b"
+      ],
+      "stored_labels": [
+        "alias_a",
+        "alias_b"
+      ],
+      "cursors": {
+        "fixture_project@chatroom": "2"
+      },
+      "failed_chats": {},
+      "outcome": "success",
+      "identities": {
+        "alias_a": {
+          "sender_id": "fixture_peer_a",
+          "is_self": false
+        },
+        "alias_b": {
+          "sender_id": "fixture_peer_b",
+          "is_self": false
+        }
+      }
+    },
+    "unknown_sender": {
+      "read_labels": [
+        "unknown"
+      ],
+      "stored_labels": [
+        "unknown"
+      ],
+      "cursors": {
+        "fixture_project@chatroom": "1"
+      },
+      "failed_chats": {},
+      "outcome": "success",
+      "identities": {
+        "unknown": {
+          "sender_id": null,
+          "is_self": null
+        }
+      }
+    },
+    "repeated_sync": {
+      "read_labels": [
+        "repeat_1",
+        "repeat_2"
+      ],
+      "stored_labels": [
+        "repeat_1",
+        "repeat_2"
+      ],
+      "cursors": {
+        "fixture_project@chatroom": "2"
+      },
+      "failed_chats": {},
+      "outcome": "success"
+    },
+    "cross_chat_local_id": {
+      "read_labels": [
+        "collision_a",
+        "collision_b"
+      ],
+      "stored_labels": [
+        "collision_a",
+        "collision_b"
+      ],
+      "cursors": {
+        "fixture_project@chatroom": "1",
+        "fixture_peer_a": "1"
+      },
+      "failed_chats": {},
+      "outcome": "success"
+    },
+    "missing_table": {
+      "read_labels": [
+        "available"
+      ],
+      "stored_labels": [
+        "available"
+      ],
+      "cursors": {
+        "fixture_project@chatroom": "1",
+        "fixture_peer_a": "0"
+      },
+      "failed_chats": {
+        "fixture_peer_a": "missing_table"
+      },
+      "outcome": "partial_success"
+    },
+    "missing_content_column": {
+      "read_labels": [
+        "valid_body"
+      ],
+      "stored_labels": [
+        "valid_body"
+      ],
+      "cursors": {
+        "fixture_project@chatroom": "1",
+        "fixture_peer_a": "0"
+      },
+      "failed_chats": {
+        "fixture_peer_a": "missing_content"
+      },
+      "outcome": "partial_success"
+    },
+    "empty_table": {
+      "read_labels": [],
+      "stored_labels": [],
+      "cursors": {
+        "fixture_project@chatroom": "0"
+      },
+      "failed_chats": {},
+      "outcome": "no_new"
+    },
+    "no_new_messages": {
+      "read_labels": [],
+      "stored_labels": [
+        "already"
+      ],
+      "cursors": {
+        "fixture_project@chatroom": "1"
+      },
+      "failed_chats": {},
+      "outcome": "no_new"
+    },
+    "write_failure": {
+      "read_labels": [
+        "write_1",
+        "write_2"
+      ],
+      "stored_labels": [],
+      "cursors": {
+        "fixture_project@chatroom": "0"
+      },
+      "failed_chats": {
+        "fixture_project@chatroom": "write"
+      },
+      "outcome": "failed",
+      "recovery": {
+        "stored_labels": [
+          "write_1",
+          "write_2"
+        ],
+        "cursors": {
+          "fixture_project@chatroom": "2"
+        }
+      }
+    },
+    "commit_failure": {
+      "read_labels": [
+        "commit_1",
+        "commit_2"
+      ],
+      "stored_labels": [],
+      "cursors": {
+        "fixture_project@chatroom": "0"
+      },
+      "failed_chats": {
+        "fixture_project@chatroom": "commit"
+      },
+      "outcome": "failed",
+      "recovery": {
+        "stored_labels": [
+          "commit_1",
+          "commit_2"
+        ],
+        "cursors": {
+          "fixture_project@chatroom": "2"
+        }
+      }
+    },
+    "restart_cursor": {
+      "read_labels": [
+        "next_2",
+        "next_3"
+      ],
+      "stored_labels": [
+        "saved",
+        "next_2",
+        "next_3"
+      ],
+      "cursors": {
+        "fixture_project@chatroom": "3"
+      },
+      "failed_chats": {},
+      "outcome": "success"
+    }
+  }
+}

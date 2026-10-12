@@ -1,0 +1,13 @@
+# 复制为运行目录中的 config.yaml，再按本机路径填写。
+wechat:
+  # 微信 db_storage 路径，通常位于：
+  # ~/Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/<微信账号>/db_storage
+  db_dir: ""
+
+  # 本机微信 wxid，用于把本人消息标记为 __self__；填写后才能准确识别本人发言。
+  self_wxid: ""
+
+  # 解密数据库、消息采集库和密钥文件路径。相对路径以 config.yaml 所在目录为基准。
+  decrypted_dir: "./decrypted"
+  collector_db: "./collector.db"
+  keys_file: "./all_keys.json"

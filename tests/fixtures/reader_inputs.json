@@ -1,0 +1,1208 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "cases": [
+    {
+      "id": "selected_chat",
+      "name": "只同步选中会话",
+      "synthetic": true,
+      "self_id": "fixture_self",
+      "contacts": [
+        {
+          "sender_ref": 1,
+          "sender_id": "fixture_self",
+          "display_name": "测试用户"
+        },
+        {
+          "sender_ref": 2,
+          "sender_id": "fixture_peer_a",
+          "display_name": "测试同事"
+        },
+        {
+          "sender_ref": 3,
+          "sender_id": "fixture_peer_b",
+          "display_name": "测试同事"
+        }
+      ],
+      "chats": [
+        {
+          "id": "fixture_project@chatroom",
+          "name": "测试项目群",
+          "table_state": "present"
+        },
+        {
+          "id": "fixture_peer_a",
+          "name": "测试同事私聊",
+          "table_state": "present"
+        }
+      ],
+      "selected_chats": [
+        "fixture_project@chatroom"
+      ],
+      "window": {
+        "start": "2026-09-24T12:00:00+08:00",
+        "end": "2026-10-01T12:00:00+08:00",
+        "bounds": "[start,end)"
+      },
+      "messages": [
+        {
+          "label": "selected_a",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "1",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "这是一条合成测试消息。"
+          }
+        },
+        {
+          "label": "unselected_b",
+          "chat_id": "fixture_peer_a",
+          "local_id": "1",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "这是一条合成测试消息。"
+          }
+        }
+      ],
+      "initial": {
+        "stored_labels": [],
+        "cursors": {}
+      },
+      "repeat_sync": 1,
+      "fault": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "empty_selection",
+      "name": "空选择不读取全部",
+      "synthetic": true,
+      "self_id": "fixture_self",
+      "contacts": [
+        {
+          "sender_ref": 1,
+          "sender_id": "fixture_self",
+          "display_name": "测试用户"
+        },
+        {
+          "sender_ref": 2,
+          "sender_id": "fixture_peer_a",
+          "display_name": "测试同事"
+        },
+        {
+          "sender_ref": 3,
+          "sender_id": "fixture_peer_b",
+          "display_name": "测试同事"
+        }
+      ],
+      "chats": [
+        {
+          "id": "fixture_project@chatroom",
+          "name": "测试项目群",
+          "table_state": "present"
+        },
+        {
+          "id": "fixture_peer_a",
+          "name": "测试同事私聊",
+          "table_state": "present"
+        }
+      ],
+      "selected_chats": [],
+      "window": {
+        "start": "2026-09-24T12:00:00+08:00",
+        "end": "2026-10-01T12:00:00+08:00",
+        "bounds": "[start,end)"
+      },
+      "messages": [
+        {
+          "label": "empty_a",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "1",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "这是一条合成测试消息。"
+          }
+        },
+        {
+          "label": "empty_b",
+          "chat_id": "fixture_peer_a",
+          "local_id": "1",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "这是一条合成测试消息。"
+          }
+        }
+      ],
+      "initial": {
+        "stored_labels": [],
+        "cursors": {}
+      },
+      "repeat_sync": 1,
+      "fault": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "seven_day_boundary",
+      "name": "最近七天精确到消息时间",
+      "synthetic": true,
+      "self_id": "fixture_self",
+      "contacts": [
+        {
+          "sender_ref": 1,
+          "sender_id": "fixture_self",
+          "display_name": "测试用户"
+        },
+        {
+          "sender_ref": 2,
+          "sender_id": "fixture_peer_a",
+          "display_name": "测试同事"
+        },
+        {
+          "sender_ref": 3,
+          "sender_id": "fixture_peer_b",
+          "display_name": "测试同事"
+        }
+      ],
+      "chats": [
+        {
+          "id": "fixture_project@chatroom",
+          "name": "测试项目群",
+          "table_state": "present"
+        },
+        {
+          "id": "fixture_peer_a",
+          "name": "测试同事私聊",
+          "table_state": "present"
+        }
+      ],
+      "selected_chats": [
+        "fixture_project@chatroom"
+      ],
+      "window": {
+        "start": "2026-09-24T12:00:00+08:00",
+        "end": "2026-10-01T12:00:00+08:00",
+        "bounds": "[start,end)"
+      },
+      "messages": [
+        {
+          "label": "before",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "1",
+          "sender_ref": 2,
+          "sent_at": "2026-09-24T11:59:59+08:00",
+          "type": 1,
+          "payload": {
+            "text": "边界前"
+          }
+        },
+        {
+          "label": "start",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "2",
+          "sender_ref": 2,
+          "sent_at": "2026-09-24T12:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "开始边界"
+          }
+        },
+        {
+          "label": "inside",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "3",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "区间内部"
+          }
+        },
+        {
+          "label": "last",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "4",
+          "sender_ref": 2,
+          "sent_at": "2026-10-01T11:59:59+08:00",
+          "type": 1,
+          "payload": {
+            "text": "结束前一秒"
+          }
+        },
+        {
+          "label": "end",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "5",
+          "sender_ref": 2,
+          "sent_at": "2026-10-01T12:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "结束边界"
+          }
+        },
+        {
+          "label": "after",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "6",
+          "sender_ref": 2,
+          "sent_at": "2026-10-01T12:00:01+08:00",
+          "type": 1,
+          "payload": {
+            "text": "结束之后"
+          }
+        }
+      ],
+      "initial": {
+        "stored_labels": [],
+        "cursors": {}
+      },
+      "repeat_sync": 1,
+      "fault": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "long_text",
+      "name": "完整保存超过两千字原文",
+      "synthetic": true,
+      "self_id": "fixture_self",
+      "contacts": [
+        {
+          "sender_ref": 1,
+          "sender_id": "fixture_self",
+          "display_name": "测试用户"
+        },
+        {
+          "sender_ref": 2,
+          "sender_id": "fixture_peer_a",
+          "display_name": "测试同事"
+        },
+        {
+          "sender_ref": 3,
+          "sender_id": "fixture_peer_b",
+          "display_name": "测试同事"
+        }
+      ],
+      "chats": [
+        {
+          "id": "fixture_project@chatroom",
+          "name": "测试项目群",
+          "table_state": "present"
+        },
+        {
+          "id": "fixture_peer_a",
+          "name": "测试同事私聊",
+          "table_state": "present"
+        }
+      ],
+      "selected_chats": [
+        "fixture_project@chatroom"
+      ],
+      "window": {
+        "start": "2026-09-24T12:00:00+08:00",
+        "end": "2026-10-01T12:00:00+08:00",
+        "bounds": "[start,end)"
+      },
+      "messages": [
+        {
+          "label": "long",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "1",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "repeat": {
+              "unit": "合成测试原文。",
+              "count": 400
+            }
+          }
+        }
+      ],
+      "initial": {
+        "stored_labels": [],
+        "cursors": {}
+      },
+      "repeat_sync": 1,
+      "fault": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "sender_identity",
+      "name": "本人和他人身份分开",
+      "synthetic": true,
+      "self_id": "fixture_self",
+      "contacts": [
+        {
+          "sender_ref": 1,
+          "sender_id": "fixture_self",
+          "display_name": "测试用户"
+        },
+        {
+          "sender_ref": 2,
+          "sender_id": "fixture_peer_a",
+          "display_name": "测试同事"
+        },
+        {
+          "sender_ref": 3,
+          "sender_id": "fixture_peer_b",
+          "display_name": "测试同事"
+        }
+      ],
+      "chats": [
+        {
+          "id": "fixture_project@chatroom",
+          "name": "测试项目群",
+          "table_state": "present"
+        },
+        {
+          "id": "fixture_peer_a",
+          "name": "测试同事私聊",
+          "table_state": "present"
+        }
+      ],
+      "selected_chats": [
+        "fixture_project@chatroom"
+      ],
+      "window": {
+        "start": "2026-09-24T12:00:00+08:00",
+        "end": "2026-10-01T12:00:00+08:00",
+        "bounds": "[start,end)"
+      },
+      "messages": [
+        {
+          "label": "self",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "1",
+          "sender_ref": 1,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "我明天提交合成清单。"
+          }
+        },
+        {
+          "label": "peer",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "2",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "这是一条合成测试消息。"
+          }
+        }
+      ],
+      "initial": {
+        "stored_labels": [],
+        "cursors": {}
+      },
+      "repeat_sync": 1,
+      "fault": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "same_display_name",
+      "name": "同昵称不合并账号",
+      "synthetic": true,
+      "self_id": "fixture_self",
+      "contacts": [
+        {
+          "sender_ref": 1,
+          "sender_id": "fixture_self",
+          "display_name": "测试用户"
+        },
+        {
+          "sender_ref": 2,
+          "sender_id": "fixture_peer_a",
+          "display_name": "测试同事"
+        },
+        {
+          "sender_ref": 3,
+          "sender_id": "fixture_peer_b",
+          "display_name": "测试同事"
+        }
+      ],
+      "chats": [
+        {
+          "id": "fixture_project@chatroom",
+          "name": "测试项目群",
+          "table_state": "present"
+        },
+        {
+          "id": "fixture_peer_a",
+          "name": "测试同事私聊",
+          "table_state": "present"
+        }
+      ],
+      "selected_chats": [
+        "fixture_project@chatroom"
+      ],
+      "window": {
+        "start": "2026-09-24T12:00:00+08:00",
+        "end": "2026-10-01T12:00:00+08:00",
+        "bounds": "[start,end)"
+      },
+      "messages": [
+        {
+          "label": "alias_a",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "1",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "合成甲"
+          }
+        },
+        {
+          "label": "alias_b",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "2",
+          "sender_ref": 3,
+          "sent_at": "2026-09-30T10:01:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "合成乙"
+          }
+        }
+      ],
+      "initial": {
+        "stored_labels": [],
+        "cursors": {}
+      },
+      "repeat_sync": 1,
+      "fault": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "unknown_sender",
+      "name": "身份缺失不猜测",
+      "synthetic": true,
+      "self_id": "fixture_self",
+      "contacts": [
+        {
+          "sender_ref": 1,
+          "sender_id": "fixture_self",
+          "display_name": "测试用户"
+        },
+        {
+          "sender_ref": 2,
+          "sender_id": "fixture_peer_a",
+          "display_name": "测试同事"
+        },
+        {
+          "sender_ref": 3,
+          "sender_id": "fixture_peer_b",
+          "display_name": "测试同事"
+        }
+      ],
+      "chats": [
+        {
+          "id": "fixture_project@chatroom",
+          "name": "测试项目群",
+          "table_state": "present"
+        },
+        {
+          "id": "fixture_peer_a",
+          "name": "测试同事私聊",
+          "table_state": "present"
+        }
+      ],
+      "selected_chats": [
+        "fixture_project@chatroom"
+      ],
+      "window": {
+        "start": "2026-09-24T12:00:00+08:00",
+        "end": "2026-10-01T12:00:00+08:00",
+        "bounds": "[start,end)"
+      },
+      "messages": [
+        {
+          "label": "unknown",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "1",
+          "sender_ref": 99,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "合成未知身份"
+          }
+        }
+      ],
+      "initial": {
+        "stored_labels": [],
+        "cursors": {}
+      },
+      "repeat_sync": 1,
+      "fault": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "repeated_sync",
+      "name": "重复同步只保存一份",
+      "synthetic": true,
+      "self_id": "fixture_self",
+      "contacts": [
+        {
+          "sender_ref": 1,
+          "sender_id": "fixture_self",
+          "display_name": "测试用户"
+        },
+        {
+          "sender_ref": 2,
+          "sender_id": "fixture_peer_a",
+          "display_name": "测试同事"
+        },
+        {
+          "sender_ref": 3,
+          "sender_id": "fixture_peer_b",
+          "display_name": "测试同事"
+        }
+      ],
+      "chats": [
+        {
+          "id": "fixture_project@chatroom",
+          "name": "测试项目群",
+          "table_state": "present"
+        },
+        {
+          "id": "fixture_peer_a",
+          "name": "测试同事私聊",
+          "table_state": "present"
+        }
+      ],
+      "selected_chats": [
+        "fixture_project@chatroom"
+      ],
+      "window": {
+        "start": "2026-09-24T12:00:00+08:00",
+        "end": "2026-10-01T12:00:00+08:00",
+        "bounds": "[start,end)"
+      },
+      "messages": [
+        {
+          "label": "repeat_1",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "1",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "这是一条合成测试消息。"
+          }
+        },
+        {
+          "label": "repeat_2",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "2",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "这是一条合成测试消息。"
+          }
+        }
+      ],
+      "initial": {
+        "stored_labels": [],
+        "cursors": {}
+      },
+      "repeat_sync": 2,
+      "fault": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "cross_chat_local_id",
+      "name": "不同会话相同数字 ID 不串源",
+      "synthetic": true,
+      "self_id": "fixture_self",
+      "contacts": [
+        {
+          "sender_ref": 1,
+          "sender_id": "fixture_self",
+          "display_name": "测试用户"
+        },
+        {
+          "sender_ref": 2,
+          "sender_id": "fixture_peer_a",
+          "display_name": "测试同事"
+        },
+        {
+          "sender_ref": 3,
+          "sender_id": "fixture_peer_b",
+          "display_name": "测试同事"
+        }
+      ],
+      "chats": [
+        {
+          "id": "fixture_project@chatroom",
+          "name": "测试项目群",
+          "table_state": "present"
+        },
+        {
+          "id": "fixture_peer_a",
+          "name": "测试同事私聊",
+          "table_state": "present"
+        }
+      ],
+      "selected_chats": [
+        "fixture_project@chatroom",
+        "fixture_peer_a"
+      ],
+      "window": {
+        "start": "2026-09-24T12:00:00+08:00",
+        "end": "2026-10-01T12:00:00+08:00",
+        "bounds": "[start,end)"
+      },
+      "messages": [
+        {
+          "label": "collision_a",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "1",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "这是一条合成测试消息。"
+          }
+        },
+        {
+          "label": "collision_b",
+          "chat_id": "fixture_peer_a",
+          "local_id": "1",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "这是一条合成测试消息。"
+          }
+        }
+      ],
+      "initial": {
+        "stored_labels": [],
+        "cursors": {}
+      },
+      "repeat_sync": 1,
+      "fault": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "missing_table",
+      "name": "一个会话缺表其他会话仍可读",
+      "synthetic": true,
+      "self_id": "fixture_self",
+      "contacts": [
+        {
+          "sender_ref": 1,
+          "sender_id": "fixture_self",
+          "display_name": "测试用户"
+        },
+        {
+          "sender_ref": 2,
+          "sender_id": "fixture_peer_a",
+          "display_name": "测试同事"
+        },
+        {
+          "sender_ref": 3,
+          "sender_id": "fixture_peer_b",
+          "display_name": "测试同事"
+        }
+      ],
+      "chats": [
+        {
+          "id": "fixture_project@chatroom",
+          "name": "测试项目群",
+          "table_state": "present"
+        },
+        {
+          "id": "fixture_peer_a",
+          "name": "测试同事私聊",
+          "table_state": "missing"
+        }
+      ],
+      "selected_chats": [
+        "fixture_project@chatroom",
+        "fixture_peer_a"
+      ],
+      "window": {
+        "start": "2026-09-24T12:00:00+08:00",
+        "end": "2026-10-01T12:00:00+08:00",
+        "bounds": "[start,end)"
+      },
+      "messages": [
+        {
+          "label": "available",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "1",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "这是一条合成测试消息。"
+          }
+        }
+      ],
+      "initial": {
+        "stored_labels": [],
+        "cursors": {}
+      },
+      "repeat_sync": 1,
+      "fault": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "missing_content_column",
+      "name": "缺正文列不当作无新增",
+      "synthetic": true,
+      "self_id": "fixture_self",
+      "contacts": [
+        {
+          "sender_ref": 1,
+          "sender_id": "fixture_self",
+          "display_name": "测试用户"
+        },
+        {
+          "sender_ref": 2,
+          "sender_id": "fixture_peer_a",
+          "display_name": "测试同事"
+        },
+        {
+          "sender_ref": 3,
+          "sender_id": "fixture_peer_b",
+          "display_name": "测试同事"
+        }
+      ],
+      "chats": [
+        {
+          "id": "fixture_project@chatroom",
+          "name": "测试项目群",
+          "table_state": "present"
+        },
+        {
+          "id": "fixture_peer_a",
+          "name": "测试同事私聊",
+          "table_state": "missing_content"
+        }
+      ],
+      "selected_chats": [
+        "fixture_project@chatroom",
+        "fixture_peer_a"
+      ],
+      "window": {
+        "start": "2026-09-24T12:00:00+08:00",
+        "end": "2026-10-01T12:00:00+08:00",
+        "bounds": "[start,end)"
+      },
+      "messages": [
+        {
+          "label": "valid_body",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "1",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "这是一条合成测试消息。"
+          }
+        },
+        {
+          "label": "invalid_body",
+          "chat_id": "fixture_peer_a",
+          "local_id": "1",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "这是一条合成测试消息。"
+          }
+        }
+      ],
+      "initial": {
+        "stored_labels": [],
+        "cursors": {}
+      },
+      "repeat_sync": 1,
+      "fault": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "empty_table",
+      "name": "空表与缺表可区分",
+      "synthetic": true,
+      "self_id": "fixture_self",
+      "contacts": [
+        {
+          "sender_ref": 1,
+          "sender_id": "fixture_self",
+          "display_name": "测试用户"
+        },
+        {
+          "sender_ref": 2,
+          "sender_id": "fixture_peer_a",
+          "display_name": "测试同事"
+        },
+        {
+          "sender_ref": 3,
+          "sender_id": "fixture_peer_b",
+          "display_name": "测试同事"
+        }
+      ],
+      "chats": [
+        {
+          "id": "fixture_project@chatroom",
+          "name": "测试项目群",
+          "table_state": "present"
+        },
+        {
+          "id": "fixture_peer_a",
+          "name": "测试同事私聊",
+          "table_state": "present"
+        }
+      ],
+      "selected_chats": [
+        "fixture_project@chatroom"
+      ],
+      "window": {
+        "start": "2026-09-24T12:00:00+08:00",
+        "end": "2026-10-01T12:00:00+08:00",
+        "bounds": "[start,end)"
+      },
+      "messages": [],
+      "initial": {
+        "stored_labels": [],
+        "cursors": {}
+      },
+      "repeat_sync": 1,
+      "fault": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "no_new_messages",
+      "name": "没有新消息不是失败",
+      "synthetic": true,
+      "self_id": "fixture_self",
+      "contacts": [
+        {
+          "sender_ref": 1,
+          "sender_id": "fixture_self",
+          "display_name": "测试用户"
+        },
+        {
+          "sender_ref": 2,
+          "sender_id": "fixture_peer_a",
+          "display_name": "测试同事"
+        },
+        {
+          "sender_ref": 3,
+          "sender_id": "fixture_peer_b",
+          "display_name": "测试同事"
+        }
+      ],
+      "chats": [
+        {
+          "id": "fixture_project@chatroom",
+          "name": "测试项目群",
+          "table_state": "present"
+        },
+        {
+          "id": "fixture_peer_a",
+          "name": "测试同事私聊",
+          "table_state": "present"
+        }
+      ],
+      "selected_chats": [
+        "fixture_project@chatroom"
+      ],
+      "window": {
+        "start": "2026-09-24T12:00:00+08:00",
+        "end": "2026-10-01T12:00:00+08:00",
+        "bounds": "[start,end)"
+      },
+      "messages": [
+        {
+          "label": "already",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "1",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "这是一条合成测试消息。"
+          }
+        }
+      ],
+      "initial": {
+        "stored_labels": [
+          "already"
+        ],
+        "cursors": {
+          "fixture_project@chatroom": "1"
+        }
+      },
+      "repeat_sync": 1,
+      "fault": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "write_failure",
+      "name": "写入失败不推进游标",
+      "synthetic": true,
+      "self_id": "fixture_self",
+      "contacts": [
+        {
+          "sender_ref": 1,
+          "sender_id": "fixture_self",
+          "display_name": "测试用户"
+        },
+        {
+          "sender_ref": 2,
+          "sender_id": "fixture_peer_a",
+          "display_name": "测试同事"
+        },
+        {
+          "sender_ref": 3,
+          "sender_id": "fixture_peer_b",
+          "display_name": "测试同事"
+        }
+      ],
+      "chats": [
+        {
+          "id": "fixture_project@chatroom",
+          "name": "测试项目群",
+          "table_state": "present"
+        },
+        {
+          "id": "fixture_peer_a",
+          "name": "测试同事私聊",
+          "table_state": "present"
+        }
+      ],
+      "selected_chats": [
+        "fixture_project@chatroom"
+      ],
+      "window": {
+        "start": "2026-09-24T12:00:00+08:00",
+        "end": "2026-10-01T12:00:00+08:00",
+        "bounds": "[start,end)"
+      },
+      "messages": [
+        {
+          "label": "write_1",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "1",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "这是一条合成测试消息。"
+          }
+        },
+        {
+          "label": "write_2",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "2",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "这是一条合成测试消息。"
+          }
+        }
+      ],
+      "initial": {
+        "stored_labels": [],
+        "cursors": {}
+      },
+      "repeat_sync": 1,
+      "fault": {
+        "kind": "write",
+        "chat_id": "fixture_project@chatroom"
+      }
+    },
+    {
+      "id": "commit_failure",
+      "name": "提交失败可重新取得消息",
+      "synthetic": true,
+      "self_id": "fixture_self",
+      "contacts": [
+        {
+          "sender_ref": 1,
+          "sender_id": "fixture_self",
+          "display_name": "测试用户"
+        },
+        {
+          "sender_ref": 2,
+          "sender_id": "fixture_peer_a",
+          "display_name": "测试同事"
+        },
+        {
+          "sender_ref": 3,
+          "sender_id": "fixture_peer_b",
+          "display_name": "测试同事"
+        }
+      ],
+      "chats": [
+        {
+          "id": "fixture_project@chatroom",
+          "name": "测试项目群",
+          "table_state": "present"
+        },
+        {
+          "id": "fixture_peer_a",
+          "name": "测试同事私聊",
+          "table_state": "present"
+        }
+      ],
+      "selected_chats": [
+        "fixture_project@chatroom"
+      ],
+      "window": {
+        "start": "2026-09-24T12:00:00+08:00",
+        "end": "2026-10-01T12:00:00+08:00",
+        "bounds": "[start,end)"
+      },
+      "messages": [
+        {
+          "label": "commit_1",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "1",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "这是一条合成测试消息。"
+          }
+        },
+        {
+          "label": "commit_2",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "2",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "这是一条合成测试消息。"
+          }
+        }
+      ],
+      "initial": {
+        "stored_labels": [],
+        "cursors": {}
+      },
+      "repeat_sync": 1,
+      "fault": {
+        "kind": "commit",
+        "chat_id": "fixture_project@chatroom"
+      }
+    },
+    {
+      "id": "restart_cursor",
+      "name": "重启从成功进度继续",
+      "synthetic": true,
+      "self_id": "fixture_self",
+      "contacts": [
+        {
+          "sender_ref": 1,
+          "sender_id": "fixture_self",
+          "display_name": "测试用户"
+        },
+        {
+          "sender_ref": 2,
+          "sender_id": "fixture_peer_a",
+          "display_name": "测试同事"
+        },
+        {
+          "sender_ref": 3,
+          "sender_id": "fixture_peer_b",
+          "display_name": "测试同事"
+        }
+      ],
+      "chats": [
+        {
+          "id": "fixture_project@chatroom",
+          "name": "测试项目群",
+          "table_state": "present"
+        },
+        {
+          "id": "fixture_peer_a",
+          "name": "测试同事私聊",
+          "table_state": "present"
+        }
+      ],
+      "selected_chats": [
+        "fixture_project@chatroom"
+      ],
+      "window": {
+        "start": "2026-09-24T12:00:00+08:00",
+        "end": "2026-10-01T12:00:00+08:00",
+        "bounds": "[start,end)"
+      },
+      "messages": [
+        {
+          "label": "saved",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "1",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "这是一条合成测试消息。"
+          }
+        },
+        {
+          "label": "next_2",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "2",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "这是一条合成测试消息。"
+          }
+        },
+        {
+          "label": "next_3",
+          "chat_id": "fixture_project@chatroom",
+          "local_id": "3",
+          "sender_ref": 2,
+          "sent_at": "2026-09-30T10:00:00+08:00",
+          "type": 1,
+          "payload": {
+            "text": "这是一条合成测试消息。"
+          }
+        }
+      ],
+      "initial": {
+        "stored_labels": [
+          "saved"
+        ],
+        "cursors": {
+          "fixture_project@chatroom": "1"
+        }
+      },
+      "repeat_sync": 1,
+      "fault": {
+        "kind": "none"
+      }
+    }
+  ]
+}
